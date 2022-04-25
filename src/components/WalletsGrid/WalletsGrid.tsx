@@ -10,6 +10,7 @@ const WalletsGrid = () => {
             {wallets.map(wallet => (
                 <Wallet
                     key={wallet.id}
+                    id={wallet.id}
                     name={wallet.name}
                     amount={wallet.amount}
                     currency={wallet.currency}/>
