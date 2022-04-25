@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
+import WalletsGrid from "./components/WalletsGrid/WalletsGrid";
 
 function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
+    return (
+        <div className="App">
+            <WalletsGrid/>
+        </div>
+    );
 }
 
 export default App;

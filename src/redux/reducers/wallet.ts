@@ -1,24 +1,27 @@
 import {createAction, createReducer} from "@reduxjs/toolkit";
 import {Currencies} from "../../constants";
 
-const ininialState = {
-    wallets: {
-        0: {
+const initialState = {
+    wallets: [
+        {
             id: 0,
             amount: 100,
-            currency: Currencies.BYN
+            currency: Currencies.BYN,
+            name: Currencies.BYN
         },
-        1: {
+        {
             id: 1,
             amount: 100,
-            currency: Currencies.EUR
+            currency: Currencies.EUR,
+            name: Currencies.EUR
         },
-        2: {
+        {
             id: 2,
             amount: 100,
-            currency: Currencies.RUB
+            currency: Currencies.RUB,
+            name: 'Рублики'
         }
-    }
+    ]
 }
 
-export default createReducer(ininialState, {})
+export default createReducer(initialState, {})
