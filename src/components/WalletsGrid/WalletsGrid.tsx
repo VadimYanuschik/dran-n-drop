@@ -4,7 +4,8 @@ import {useAppSelector} from "../../redux/hooks";
 import {WalletsGridWrapper} from "./WalletsGridStyles";
 
 const WalletsGrid = () => {
-    const wallets = useAppSelector(state => state.wallet.wallets)
+    const wallets = useAppSelector(state => state.wallet.wallets);
+    const [senderWalletID, setSenderWalletID] = React.useState<string | null>(null);
     return (
         <WalletsGridWrapper>
             {wallets.map(wallet => (
@@ -13,7 +14,10 @@ const WalletsGrid = () => {
                     id={wallet.id}
                     name={wallet.name}
                     amount={wallet.amount}
-                    currency={wallet.currency}/>
+                    currency={wallet.currency}
+                    senderWalletID={senderWalletID}
+                    setSenderWalletID={setSenderWalletID}
+                />
             ))}
         </WalletsGridWrapper>
     );
