@@ -1,5 +1,4 @@
 import React from 'react';
-import WalletsGrid from "./components/WalletsGrid/WalletsGrid";
 import {
     Routes,
     Route,
@@ -11,8 +10,8 @@ function App() {
     return (
         <div className="App">
             <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/transaction" element={<Transaction/>}/>
+                <Route path="" element={<Home/>}/>
+                <Route path="transaction" element={<Transaction/>}/>
             </Routes>
         </div>
     );
