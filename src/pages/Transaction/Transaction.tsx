@@ -17,6 +17,7 @@ import {conversationRate} from "../../helpers/conversationRate";
 import {calculateTransaction} from "../../helpers/calculateTransaction";
 import {validationNumbers} from "../../helpers/validationNumbers";
 import {isBiggerThanAmount} from "../../helpers/isBiggerThanAmount";
+import {makeTransaction} from "../../redux/reducers/wallet";
 
 const Transaction = () => {
     const navigate = useNavigate();
@@ -38,6 +39,12 @@ const Transaction = () => {
             setIsErrorShow(true);
         } else {
             setIsErrorShow(false);
+
+            let senderAmount = Number(senderInput);
+            let recipientAmount = Number(recipientInput);
+
+            dispatch(makeTransaction({senderAmount, recipientAmount}));
+            navigate('/');
         }
     }
 

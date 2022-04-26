@@ -13,6 +13,7 @@ const WalletsGrid = () => {
                     key={wallet.id}
                     id={wallet.id}
                     name={wallet.name}
+                    amount={wallet.amount}
                     currency={wallet.currency}
                     senderWalletID={senderWalletID}
                     setSenderWalletID={setSenderWalletID}

@@ -48,7 +48,7 @@ function Wallet({id, name, amount, currency, senderWalletID, setSenderWalletID}:
                 <WalletCircleCurrency>{currency}</WalletCircleCurrency>
             </WalletCircle>
             <WalletName>{name}</WalletName>
-            {amount && <WalletAmount>{amount}</WalletAmount>}
+            {amount && <WalletAmount>{amount.toFixed(2)}</WalletAmount>}
         </WalletWrapper>
     );
 }
