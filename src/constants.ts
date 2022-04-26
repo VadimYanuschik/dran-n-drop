@@ -5,9 +5,9 @@ export enum Currencies {
     BYN = 'BYN'
 }
 
-export enum ExchangeRate {
-    USD = 0.3683,
-    EUR = 0.3384,
-    RUB = 28.0175,
-    BYN = 1
+export const ExchangeRate = {
+    'USD': 0.3683,
+    'EUR': 0.3384,
+    'RUB': 28.0175,
+    'BYN': 1
 }
