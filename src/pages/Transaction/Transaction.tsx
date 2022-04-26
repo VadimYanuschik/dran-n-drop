@@ -11,17 +11,20 @@ import {
     WalletsTransactionBox
 } from "./TransactionStyles";
 import Wallet from "../../components/Wallet/Wallet";
-import {useAppSelector} from "../../redux/hooks";
+import {useAppDispatch, useAppSelector} from "../../redux/hooks";
 import {useNavigate} from "react-router-dom";
 import {conversationRate} from "../../helpers/conversationRate";
 import {calculateTransaction} from "../../helpers/calculateTransaction";
+import {validationNumbers} from "../../helpers/validationNumbers";
+import {isBiggerThanAmount} from "../../helpers/isBiggerThanAmount";
 
 const Transaction = () => {
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
     const {sender, recipient} = useAppSelector(state => state.wallet)
     const [isErrorShow, setIsErrorShow] = React.useState<boolean>(false);
-    const [senderInput, setSenderInput] = React.useState<string | undefined>(undefined);
-    const [recipientInput, setRecipientInput] = React.useState<string | undefined>(undefined);
+    const [senderInput, setSenderInput] = React.useState<string>('');
+    const [recipientInput, setRecipientInput] = React.useState<string>('');
 
     React.useEffect(() => {
         if(!sender || !recipient) {
@@ -31,7 +34,11 @@ const Transaction = () => {
 
 
     function handleSubmit() {
-
+        if(validationNumbers(senderInput, recipientInput) || isBiggerThanAmount(senderInput, recipientInput, sender?.amount, recipient?.amount)) {
+            setIsErrorShow(true);
+        } else {
+            setIsErrorShow(false);
+        }
     }
 
     function handleSenderChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -74,8 +81,8 @@ const Transaction = () => {
                                 <Input id={'recipientInput'} type="text" value={recipientInput} onChange={e => handleRecipientChange(e)}/>
                             </FormBox>
                             <ConversationRate>Курс конвертации: {conversationRate(sender.currency, recipient.currency)}</ConversationRate>
-                            {isErrorShow && <Alert>Проверьте введенные данные!</Alert>}
-                            <Submit onSubmit={handleSubmit}>Подтвердить</Submit>
+                            {isErrorShow ? <Alert>Проверьте введенные данные!</Alert> : null}
+                            <Submit onClick={handleSubmit}>Подтвердить</Submit>
                         </TransactionForm>
                     </TransactionBox>
             )

@@ -64,6 +64,7 @@ export const Submit = styled.button`
   margin: 0 auto;
   display: block;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 export const Alert = styled.p`

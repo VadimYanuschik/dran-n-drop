@@ -34,6 +34,7 @@ const initialState : WalletReducerProps = {
 }
 
 export const transactionWallets = createAction<{sender: string, recipient: string}>('transactionWallets')
+// export const makeTransaction = createAction<sen>('makeTransaction')
 
 
 export default createReducer(initialState, (builder) => {
