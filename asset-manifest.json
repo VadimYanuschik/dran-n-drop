@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/dran-n-drop/static/js/main.d868c30a.js",
+    "main.js": "/dran-n-drop/static/js/main.432d540c.js",
     "static/media/wall-background.jpg": "/dran-n-drop/static/media/wall-background.d21c81b15ceb49f23c69.jpg",
     "index.html": "/dran-n-drop/index.html",
-    "main.d868c30a.js.map": "/dran-n-drop/static/js/main.d868c30a.js.map"
+    "main.432d540c.js.map": "/dran-n-drop/static/js/main.432d540c.js.map"
   },
   "entrypoints": [
-    "static/js/main.d868c30a.js"
+    "static/js/main.432d540c.js"
   ]
 }
