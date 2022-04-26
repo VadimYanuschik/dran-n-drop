@@ -42,10 +42,8 @@ export const TransactionForm = styled.div`
 export const Input = styled.input`
   border-radius: 20px;
   padding: 10px 20px;
-  margin: 0 auto;
   border: 0;
   display: block;
-  margin-top: 16px;
   -webkit-appearance: none;
 `;
 
@@ -66,4 +64,20 @@ export const Submit = styled.button`
   margin: 0 auto;
   display: block;
   margin-top: 20px;
+`;
+
+export const Alert = styled.p`
+  color: red;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 16px;
+`;
+
+export const FormBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #ffffff;
+  margin-top: 16px;
 `;
